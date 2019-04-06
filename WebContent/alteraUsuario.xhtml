@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:h="http://xmlns.jcp.org/jsf/html"
+    xmlns:f="http://xmlns.jcp.org/jsf/core"
+    xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+    xmlns:p="http://primefaces.org/ui">
+
+	<ui:composition template="_template.xhtml">
+	
+	<ui:define name="cabecalho">
+	
+	</ui:define>
+		
+		<ui:define name="conteudo">
+		
+			<div class="container">
+			
+		  		<p:messages globalOnly="true" id="msg"/>
+				
+					<h:form id="cadastroUsuarios" >
+					
+						<p:fieldset legend="Alteração de Usuario" >
+						
+								<h:panelGrid columns="3">
+								
+									
+									<p:outputLabel value="Nome:" for="nome" />
+										<p:inputText styleClass="form-control" id="nome" value="#{usuarioBean.usuario.nome}"  required="true">
+										</p:inputText>
+									<p:message for="nome" id="msgNome" />
+					
+									<p:outputLabel value="Login:" for="login" />
+										<p:inputText id="login" styleClass="form-control"  value="#{usuarioBean.usuario.login}" required="true"/>
+									<p:message for="login" id="msgLogin" />
+									
+									
+									<p:outputLabel value="Senha:" for="senha" />
+										<p:password id="senha" styleClass="form-control"  value="#{usuarioBean.usuario.senha}" required="true" feedback="true" />
+									<p:message for="senha" id="msgSenha" />
+								
+									
+									<p:outputLabel value="Situação"/>
+										<p:selectOneMenu value="#{usuarioBean.situacaoId}">
+											<f:selectItems value="#{usuarioBean.situacao}" var="situacao" itemLabel="#{situacao.descricao}" itemValue="#{situacao.id}" >
+											</f:selectItems>
+									</p:selectOneMenu>
+								
+									</h:panelGrid>
+									
+									<p:inputText  id="id" value="#{usuarioBean.usuario.id}" type="hidden" />
+						
+								<p:commandButton value="Alterar" class="btn-altera" action="#{usuarioBean.altera}" update="@form" process="@form" />
+								
+						</p:fieldset>
+						
+					</h:form>
+				
+			</div>
+			
+		</ui:define>
+		
+	</ui:composition>
+
+</html>

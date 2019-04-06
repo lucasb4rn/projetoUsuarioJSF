@@ -1,0 +1,33 @@
+.buscar {
+	margin: 0;
+	text-align: left;
+	
+}
+
+.texto-buscar {
+	margin-right: 10px;
+	
+}
+
+.input-buscar {
+	width: 20em;
+	
+}
+
+
+.icon-trash {
+	
+	margin-left: 40%;
+	width:1.5em;
+	height:1.5em;
+	
+}
+
+.icon-edit {
+	
+	margin-left: 40%;
+	width:1.5em;
+	height:1.5em;
+	
+	
+}
